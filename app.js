@@ -242,7 +242,7 @@ class Notehack extends React.Component {
     const numberNote = listeNote.length;
 
     return (
-      <div className="container-fluid pt-3 pb-5" style={{ backgroundImage: colorBackground }}>
+      <div className="container-fluid pt-3 pb-5 corps" style={{ backgroundImage: colorBackground }}>
         <BackgroundColor height={height} width={width} backgroundContainer={this.backgroundContainer} />
         <Form type='text' value={valueInput} onChange={this.handleChange} onSubmit={this.handleSubmit} placeholder='Add note' isEditing={isEditing} />
         <ContainerNotes listeNote={listeNote} handleEdit={this.handleEdit} handleDelete={this.handleDelete} handleDeleteAll={this.handleDeleteAll} numberNote={numberNote} />
