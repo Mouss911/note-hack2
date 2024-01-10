@@ -1,0 +1,47 @@
+.corps{
+  /* background: linear-gradient(turquoise, blue); */
+  background: grey;
+  height: 100vh;
+}
+
+/* .ligne1{
+  display: flex;
+  justify-content: space-between;
+} */
+.b1, .b2, .b3, .b4, .b5, .b6{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 7px;
+  border: none;
+}
+.b1{
+  background: linear-gradient(90deg,#4dc9e6,#210cac);
+}
+.b2{
+  background: #a9c9ff;
+  background-image: linear-gradient(180deg,#a9c9ff,#ffbbec);
+}
+.b3{
+  background-color: #fa8bff;
+  background-image: linear-gradient(45deg,#fa8bff,#2bd2ff 52%,#2bff88 90%);
+}
+.b4{
+  background-image: linear-gradient(to bottom right,#ff512f,#dd2476);
+}
+.b5{
+  background-image: linear-gradient(to bottom right,#fd8451,#ffbd6f);
+}
+.b6{
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg,#85ffbd,#fffb7d);
+}
+
+.carte{
+  border: none;
+  border-left: 3px solid blue;
+}
+
+.mod, .sup{
+  cursor: pointer;
+}
