@@ -24,6 +24,18 @@ class BackgroundColor extends React.Component {
 }
 
 class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.inputRef = React.createRef();
+  }
+
+  componentDidUpdate(prevProps) {
+    // Lorsque le mode d'édition change, mettez le curseur dans le champ de saisie
+    if (prevProps.isEditing !== this.props.isEditing && this.props.isEditing) {
+      this.inputRef.current.focus();
+    }
+  }
+  
   render() {
     const { placeholder, type, value, onChange, onSubmit, isEditing } = this.props;
 
@@ -31,7 +43,7 @@ class Form extends React.Component {
       <form className='container mt-5 py-3 gy-3' style={{ backgroundColor: '#fff', borderRadius: '5px' }} onSubmit={onSubmit}>
         <div className='row'>
           <div className='col d-flex p-3 bg-white rounded-2 gap-2'>
-            <Input type={type} value={value} onChange={onChange} placeholder={placeholder} />
+            <Input type={type} value={value} onChange={onChange} placeholder={placeholder} inputRef={this.inputRef} />
             <button className='btn btn-success px-3'>
               {isEditing ? 'Update' : 'Add'}
             </button>
@@ -87,10 +99,10 @@ class Palette extends React.Component {
 
 class Input extends React.Component {
   render() {
-    const { placeholder, type, value, onChange } = this.props;
+    const { placeholder, type, value, onChange, inputRef } = this.props;
 
     return (
-      <input type={type} value={value} onChange={onChange} placeholder={placeholder} className='form-control' />
+      <input type={type} value={value} onChange={onChange} placeholder={placeholder} ref={inputRef} className='form-control' />
     );
   }
 }
