@@ -131,7 +131,7 @@ class Notes extends React.Component {
     const { listeNote, handleEdit, handleDelete } = this.props;
 
     return (
-      <div className="row gy-2">
+      <div className="row gy-2 d-flex justify-content-center">
         {listeNote.map((note) => (
           <div className='col-md-4 col-sm-12' key={note.id}>
             <div className="card" style={{ borderLeft: "5px solid blue", borderRadius: "10px" }}>
